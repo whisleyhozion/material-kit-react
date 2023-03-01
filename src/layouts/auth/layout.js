@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import NextLink from 'next/link';
 import { Box, Typography, Unstable_Grid2 as Grid } from '@mui/material';
 import { Logo } from 'src/components/logo';
+import { maxHeight } from '@mui/system';
 
 // TODO: Change subtitle text
 
@@ -40,17 +41,7 @@ export const Layout = (props) => {
               width: '100%'
             }}
           >
-            <Box
-              component={NextLink}
-              href="/"
-              sx={{
-                display: 'inline-flex',
-                height: 32,
-                width: 32
-              }}
-            >
-              <Logo />
-            </Box>
+            
           </Box>
           {children}
         </Grid>
@@ -59,12 +50,13 @@ export const Layout = (props) => {
           lg={6}
           sx={{
             alignItems: 'center',
-            background: 'radial-gradient(50% 50% at 50% 50%, #122647 0%, #090E23 100%)',
+            background: 'radial-gradient(50% 50% at 50% 50%, #86bf99 0%, #649c8b 100%)',
             color: 'white',
             display: 'flex',
             justifyContent: 'center',
             '& img': {
-              maxWidth: '100%'
+              width: '700px',
+              height: '570px'
             }
           }}
         >
@@ -82,10 +74,10 @@ export const Layout = (props) => {
               Welcome to{' '}
               <Box
                 component="a"
-                sx={{ color: '#15B79E' }}
+                sx={{ color: '#2c9937' }}
                 target="_blank"
               >
-                Devias Kit
+                LaCha
               </Box>
             </Typography>
             <Typography
@@ -93,11 +85,12 @@ export const Layout = (props) => {
               sx={{ mb: 3 }}
               variant="subtitle1"
             >
-              A professional kit that comes with ready-to-use MUI components.
+              
             </Typography>
             <img
               alt=""
-              src="/assets/auth-illustration.svg"
+              className="w-full"
+              src="/assets/bg.jpg"
             />
           </Box>
         </Grid>

@@ -22,7 +22,6 @@ import { FcGoogle } from "react-icons/fc";
 
 import { firebaseApp } from 'src/firebase.config';
 import {getAuth, signInWithPopup, GoogleAuthProvider} from "firebase/auth"
-import { access } from 'fs';
 
 const Page = () => {
   const router = useRouter();
@@ -37,7 +36,7 @@ const Page = () => {
 
     localStorage.setItem("user", JSON.stringify(providerData));
     localStorage.setItem("accessToken", JSON.stringify(refreshToken));
-    console.log()
+    console.log(accessToken)
 
   
   }

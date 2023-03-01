@@ -158,7 +158,7 @@ export const AuthProvider = (props) => {
       localStorage.getItem('accessToken') !== undefined
         ? JSON.parse(localStorage.getItem('accessToken'))
         : localStorage.clear();
-        window.sessionStorage.setItem('authenticated', 'true');
+
     return accessToken;
   }
 

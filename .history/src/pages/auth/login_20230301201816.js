@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -22,7 +22,6 @@ import { FcGoogle } from "react-icons/fc";
 
 import { firebaseApp } from 'src/firebase.config';
 import {getAuth, signInWithPopup, GoogleAuthProvider} from "firebase/auth"
-import { access } from 'fs';
 
 const Page = () => {
   const router = useRouter();
@@ -36,13 +35,10 @@ const Page = () => {
     const {refreshToken, providerData} = user;
 
     localStorage.setItem("user", JSON.stringify(providerData));
-    localStorage.setItem("accessToken", JSON.stringify(refreshToken));
-    console.log()
+    localStorage.setItem("refreshToken", JSON.stringify(refreshToken));
 
-  
+    
   }
-
-  
 
   // const [method, setMethod] = useState('email');
   // const formik = useFormik({

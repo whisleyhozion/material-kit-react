@@ -153,15 +153,6 @@ export const AuthProvider = (props) => {
     });
   };
 
-  const userAccessToken = () => {
-    const accessToken =
-      localStorage.getItem('accessToken') !== undefined
-        ? JSON.parse(localStorage.getItem('accessToken'))
-        : localStorage.clear();
-        window.sessionStorage.setItem('authenticated', 'true');
-    return accessToken;
-  }
-
   const signUp = async (email, name, password) => {
     throw new Error('Sign up is not implemented');
   };
@@ -179,8 +170,7 @@ export const AuthProvider = (props) => {
         skip,
         signIn,
         signUp,
-        signOut,
-        userAccessToken
+        signOut
       }}
     >
       {children}
@@ -196,5 +186,8 @@ export const AuthConsumer = AuthContext.Consumer;
 
 export const useAuthContext = () => useContext(AuthContext);
 
+export const userAccessToken = () => {
+  const accessToken = localStorage.getItem('accessToken') !== undefined ? JSON.parse(localStorage.getItem('accessToken')) : localStorage.clear();
 
-
+  return accessToken;
+}
